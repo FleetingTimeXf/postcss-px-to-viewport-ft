@@ -1,11 +1,12 @@
-# postcss-px-to-viewport
-[![NPM version](https://badge.fury.io/js/postcss-px-to-viewport.svg)](http://badge.fury.io/js/postcss-px-to-viewport)
-
-[English](README.md) | 中文
+# postcss-px-to-viewport-ft
+[![NPM version](https://badge.fury.io/js/postcss-px-to-viewport-ft.svg)](http://badge.fury.io/js/postcss-px-to-viewport-ft)
 
 将px单位转换为视口单位的 (vw, vh, vmin, vmax) 的 [PostCSS](https://github.com/postcss/postcss) 插件.
 
 ## 简介
+搬运[postcss-px-to-viewport-ft](https://github.com/evrone/postcss-px-to-viewport-ft)
+
+修复了postcss.atRule is not a constructor报错的问题
 
 如果你的样式需要做根据视口大小来调整宽度，这个脚本可以将你CSS中的px单位转化为vw，1vw等于1/100视口宽度。
 
@@ -74,11 +75,11 @@
 ### 安装
 使用npm安装
 ```
-$ npm install postcss-px-to-viewport --save-dev
+$ npm install postcss-px-to-viewport-ft --save-dev
 ```
 或者使用yarn进行安装
 ```
-$ yarn add -D postcss-px-to-viewport
+$ yarn add -D postcss-px-to-viewport-ft
 ```
 
 ### 配置参数
@@ -107,11 +108,11 @@ $ yarn add -D postcss-px-to-viewport
 - `viewportWidth` (Number) 设计稿的视口宽度
 - `unitPrecision` (Number) 单位转换后保留的精度
 - `propList` (Array) 能转化为vw的属性列表
-  - 传入特定的CSS属性；
-  - 可以传入通配符"*"去匹配所有属性，例如：['*']；
-  - 在属性的前或后添加"*",可以匹配特定的属性. (例如['*position*'] 会匹配 background-position-y)
-  - 在特定属性前加 "!"，将不转换该属性的单位 . 例如: ['*', '!letter-spacing']，将不转换letter-spacing
-  - "!" 和 "*"可以组合使用， 例如: ['*', '!font*']，将不转换font-size以及font-weight等属性
+    - 传入特定的CSS属性；
+    - 可以传入通配符"*"去匹配所有属性，例如：['*']；
+    - 在属性的前或后添加"*",可以匹配特定的属性. (例如['*position*'] 会匹配 background-position-y)
+    - 在特定属性前加 "!"，将不转换该属性的单位 . 例如: ['*', '!letter-spacing']，将不转换letter-spacing
+    - "!" 和 "*"可以组合使用， 例如: ['*', '!font*']，将不转换font-size以及font-weight等属性
 - `viewportUnit` (String) 希望使用的视口单位
 - `fontViewportUnit` (String) 字体使用的视口单位
 - `selectorBlackList` (Array) 需要忽略的CSS选择器，不会转为视口单位，使用原有的px等单位。
@@ -126,7 +127,7 @@ $ yarn add -D postcss-px-to-viewport
     - 如果值是一个正则表达式，那么匹配这个正则的文件会被忽略
     - 如果传入的值是一个数组，那么数组里的值必须为正则
 - `include` (Array or Regexp) 如果设置了`include`，那将只有匹配到的文件才会被转换，例如只转换 'src/mobile' 下的文件
-    (`include: /\/src\/mobile\//`)
+  (`include: /\/src\/mobile\//`)
     - 如果值是一个正则表达式，将包含匹配的文件，否则将排除该文件
     - 如果传入的值是一个数组，那么数组里的值必须为正则
 - `landscape` (Boolean) 是否添加根据 `landscapeWidth` 生成的媒体查询条件 `@media (orientation: landscape)`
@@ -171,7 +172,7 @@ There are several more reasons why your pixels may not convert, the following op
 module.exports = {
   plugins: {
     // ...
-    'postcss-px-to-viewport': {
+    'postcss-px-to-viewport-ft': {
       // options
     }
   }
@@ -184,7 +185,7 @@ module.exports = {
 ```js
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
-var pxtoviewport = require('postcss-px-to-viewport');
+var pxtoviewport = require('postcss-px-to-viewport-ft');
 
 gulp.task('css', function () {
 
@@ -223,28 +224,16 @@ $ npm run test
 
 ## 版本跟踪
 
-使用 [SemVer](http://semver.org/) 做版本跟踪， 可用版本可在[这](https://github.com/evrone/postcss-px-to-viewport/tags)看到
+使用 [SemVer](http://semver.org/) 做版本跟踪， 可用版本可在[这](https://github.com/evrone/postcss-px-to-viewport-ft/tags)看到
 
 ## 作者
 
 * [Dmitry Karpunin](https://github.com/KODerFunk) - *Initial work*
 * [Ivan Bunin](https://github.com/chernobelenkiy)
+* [FleetingTime](https://github.com/2376713849)
 
-在 [contributors](https://github.com/evrone/postcss-px-to-viewport/contributors) 里可以看到谁参与了本项目.
+在 [contributors](https://github.com/evrone/postcss-px-to-viewport-ft/contributors) 里可以看到谁参与了本项目.
 
 ## 许可
 
 本项目使用 [MIT License](LICENSE).
-
-## 赞助商
-
-访问 [Evrone](https://evrone.com/)网站以获取有关[项目构建](https://evrone.com/cases)的更多信息。
-
-<a href="https://evrone.com/?utm_source=postcss-px-to-viewport">
-  <img src="https://user-images.githubusercontent.com/417688/34437029-dbfe4ee6-ecab-11e7-9d80-2b274b4149b3.png"
-       alt="Sponsored by Evrone" width="231" />
-</a>
-
-## 借鉴自
-
-* 受 https://github.com/cuth/postcss-pxtorem/ 启发有了这个项目

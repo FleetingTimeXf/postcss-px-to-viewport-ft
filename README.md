@@ -1,10 +1,10 @@
 # postcss-px-to-viewport-ft
-[![NPM version](https://badge.fury.io/js/postcss-px-to-viewport.svg)](http://badge.fury.io/js/postcss-px-to-viewport)
+[![NPM version](https://badge.fury.io/js/postcss-px-to-viewport-ft.svg)](http://badge.fury.io/js/postcss-px-to-viewport-ft)
 
 将px单位转换为视口单位的 (vw, vh, vmin, vmax) 的 [PostCSS](https://github.com/postcss/postcss) 插件.
 
 ## 简介
-搬运[postcss-px-to-viewport](https://github.com/evrone/postcss-px-to-viewport)
+搬运[postcss-px-to-viewport-ft](https://github.com/evrone/postcss-px-to-viewport-ft)
 
 修复了postcss.atRule is not a constructor报错的问题
 
@@ -75,11 +75,11 @@
 ### 安装
 使用npm安装
 ```
-$ npm install postcss-px-to-viewport --save-dev
+$ npm install postcss-px-to-viewport-ft --save-dev
 ```
 或者使用yarn进行安装
 ```
-$ yarn add -D postcss-px-to-viewport
+$ yarn add -D postcss-px-to-viewport-ft
 ```
 
 ### 配置参数
@@ -172,7 +172,7 @@ There are several more reasons why your pixels may not convert, the following op
 module.exports = {
   plugins: {
     // ...
-    'postcss-px-to-viewport': {
+    'postcss-px-to-viewport-ft': {
       // options
     }
   }
@@ -185,7 +185,7 @@ module.exports = {
 ```js
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
-var pxtoviewport = require('postcss-px-to-viewport');
+var pxtoviewport = require('postcss-px-to-viewport-ft');
 
 gulp.task('css', function () {
 
@@ -224,28 +224,16 @@ $ npm run test
 
 ## 版本跟踪
 
-使用 [SemVer](http://semver.org/) 做版本跟踪， 可用版本可在[这](https://github.com/evrone/postcss-px-to-viewport/tags)看到
+使用 [SemVer](http://semver.org/) 做版本跟踪， 可用版本可在[这](https://github.com/evrone/postcss-px-to-viewport-ft/tags)看到
 
 ## 作者
 
 * [Dmitry Karpunin](https://github.com/KODerFunk) - *Initial work*
 * [Ivan Bunin](https://github.com/chernobelenkiy)
+* [FleetingTime](https://github.com/2376713849)
 
-在 [contributors](https://github.com/evrone/postcss-px-to-viewport/contributors) 里可以看到谁参与了本项目.
+在 [contributors](https://github.com/evrone/postcss-px-to-viewport-ft/contributors) 里可以看到谁参与了本项目.
 
 ## 许可
 
 本项目使用 [MIT License](LICENSE).
-
-## 赞助商
-
-访问 [Evrone](https://evrone.com/)网站以获取有关[项目构建](https://evrone.com/cases)的更多信息。
-
-<a href="https://evrone.com/?utm_source=postcss-px-to-viewport">
-  <img src="https://user-images.githubusercontent.com/417688/34437029-dbfe4ee6-ecab-11e7-9d80-2b274b4149b3.png"
-       alt="Sponsored by Evrone" width="231" />
-</a>
-
-## 借鉴自
-
-* 受 https://github.com/cuth/postcss-pxtorem/ 启发有了这个项目
